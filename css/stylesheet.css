@@ -1,8 +1,8 @@
 .no-margin{
-	margin: 0px;
+  margin: 0px;
 }
 .no-padding{
-	padding: 0px;
+  padding: 0px;
 }
 
 .navbar-inverse{
@@ -143,11 +143,32 @@
   -webkit-background-clip: padding-box;
   background-clip: padding-box;
   float: left;
-  background: #fff
+  background: transparent;
+  position: relative;
 }
-.contact .social-icons a:hover {
+
+.contact .social-icons a::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    content: '';
+    background: #C1E592;
+    transition: all 400ms;
+    border-radius: inherit;
+    z-index: 0;
+}
+
+.contact .social-icons a:hover::before {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+/*.contact .social-icons a:hover {
   background: #C1E592;
-}
+}*/
 .contact .social-icons a .fa {
   color: #888;
 }
